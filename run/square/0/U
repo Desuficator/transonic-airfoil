@@ -1,0 +1,58 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  12
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       volVectorField;
+    object      U;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 1 -1 0 0 0 0];
+
+internalField   uniform (0 0 0);
+
+boundaryField
+{
+    top
+    {
+        type            inletOutlet;
+        inletValue      uniform (0 0 0);  // Velocity in case of reverse flow
+        value           uniform (0 0 0); // Default outlet value
+    }
+
+    inlet
+    {
+        type            fixedValue; // for supersonic spectial boundary condition
+        value           uniform (20 0 0);
+    }
+
+    outlet
+    {
+        type            inletOutlet; // advective or transmissive
+        inletValue      uniform (0 0 0);  // Velocity in case of reverse flow
+        value           uniform (0 0 0); // Default outlet value
+    }
+
+    bottom
+    {
+        type            symmetryPlane; // noSlip for non parallel to the ground
+    }
+
+    front
+    {
+        type            empty;
+    }
+
+    back
+    {
+        type            empty;
+    }
+}
+
+// ************************************************************************* //
