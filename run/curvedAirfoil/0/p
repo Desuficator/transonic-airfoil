@@ -27,13 +27,14 @@ boundaryField
     inlet
     {
         type            fixedValue;
-        value           uniform 1;
+        value           $internalField;
     }
 
     outlet
     {
         type            zeroGradient;
     }
+
     bottom
     {
         type            zeroGradient;
