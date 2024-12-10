@@ -2,13 +2,15 @@
 squareSide = 1; // Size of the domain
 gridsize = squareSide / 1000; // Grid size
 extrusionHeight = 0.01; // Small extrusion in z-direction for 2D
+width = 1;
+height = 1;
 
 // Points
-Point(1) = {squareSide/2, -squareSide/2, 0, gridsize};  // Bottom-right
-Point(2) = {squareSide/2, squareSide/2, 0, gridsize};   // Top-right
-Point(3) = {-squareSide/2, squareSide/2, 0, gridsize};  // Top-left
-Point(4) = {-squareSide/2, -squareSide/2, 0, gridsize}; // Bottom-left
-Point(5) = {0, -0.45, 0 , gridsize};
+Point(1) = {width*squareSide/2, -height*squareSide/2, 0, gridsize};  // Bottom-right
+Point(2) = {width*squareSide/2, height*squareSide/2, 0, gridsize};   // Top-right
+Point(3) = {-width*squareSide/2, height*squareSide/2, 0, gridsize};  // Top-left
+Point(4) = {-width*squareSide/2, -height*squareSide/2, 0, gridsize}; // Bottom-left
+Point(5) = {0, -height*squareSide/2+0.05, 0 , gridsize};
 
 
 // Bottom surface
