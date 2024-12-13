@@ -19,30 +19,9 @@ internalField   uniform (2 0 0);
 
 boundaryField
 {
-    top
+    back
     {
-        type            zeroGradient;
-    }
-
-    inlet
-    {
-        type            fixedValue; 
-        value           $internalField;
-    }
-
-    outlet
-    {
-        type            zeroGradient;
-    }
-
-    bottomLeft
-    {
-        type            slip;
-    }
-
-    bottomRight
-    {
-        type            slip;
+        type            empty;
     }
 
     front
@@ -50,9 +29,45 @@ boundaryField
         type            empty;
     }
 
-    back
+    outlet
     {
-        type            empty;
+        type            zeroGradient;
+    }
+
+    top
+    {
+        type            slip;
+    }
+
+    inlet
+    {
+        type            fixedValue;
+        value           $internalField;
+    }
+    
+    bottom
+    {
+        type            slip;
+    }
+
+    diamondLeftUpper
+    {
+        type            slip;
+    }
+
+    diamondRightUpper
+    {
+        type            slip;
+    }
+
+    diamondRightLower
+    {
+        type            slip;
+    }
+
+    diamondLeftLower
+    {
+        type            slip;
     }
 }
 

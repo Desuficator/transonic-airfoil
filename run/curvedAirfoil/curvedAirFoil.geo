@@ -1,6 +1,6 @@
 // Inputs
 squareSide = 1; // Size of the domain
-gridsize = squareSide / 200; // Grid size
+gridsize = squareSide / 100; // Grid size
 extrusionHeight = 0.01; // Small extrusion in z-direction for 2D
 width = 1;
 height = 1;

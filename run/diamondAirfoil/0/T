@@ -19,6 +19,21 @@ internalField   uniform 1;
 
 boundaryField
 {
+    back
+    {
+        type            empty;
+    }
+
+    front
+    {
+        type            empty;
+    }
+
+    outlet
+    {
+        type            zeroGradient;
+    }
+
     top
     {
         type            zeroGradient;
@@ -29,30 +44,30 @@ boundaryField
         type            fixedValue;
         value           $internalField;
     }
-
-    outlet
+    
+    bottom
     {
         type            zeroGradient;
     }
 
-    bottomLeft
+    diamondLeftUpper
     {
         type            zeroGradient;
     }
 
-    bottomRight
+    diamondRightUpper
     {
         type            zeroGradient;
     }
 
-    front
+    diamondRightLower
     {
-        type            empty;
+        type            zeroGradient;
     }
 
-    back
+    diamondLeftLower
     {
-        type            empty;
+        type            zeroGradient;
     }
 }
 
